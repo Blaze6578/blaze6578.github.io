@@ -1,0 +1,45 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f0f0f0; /* Background color for the whole page */
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.game-frame {
+    position: relative;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    border: 2px solid #000;
+    overflow: hidden;
+    background-image: url('background.png'); /* Set the background image for the game frame */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hippo, .bad-cat {
+    position: absolute;
+    cursor: pointer;
+}
+
+.hippo img, .bad-cat img {
+    width: 100px;
+    height: auto;
+}
+
+.life-counter {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
