@@ -3,17 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Room Management</title>
+    <title>Firebase Chat Room</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+      import { getDatabase } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
+      // Add more Firebase imports if needed
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAqNIKp10KHNhfWT5f8Mtw6IcIlQgSqu28",
+        authDomain: "dndchat-9b21b.firebaseapp.com",
+        databaseURL: "https://dndchat-9b21b-default-rtdb.firebaseio.com",
+        projectId: "dndchat-9b21b",
+        storageBucket: "dndchat-9b21b.appspot.com",
+        messagingSenderId: "162856486444",
+        appId: "1:162856486444:web:9b0879a3b0268ac1cef389",
+        measurementId: "G-SX1MBB6PPK"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app); // Initializing the Realtime Database
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>Room Management</h1>
-        <div class="button-group">
-            <button id="createRoomBtn">Create a Room</button>
-            <button id="joinRoomBtn">Join a Room</button>
+        <h1>Chat Room</h1>
+        <div id="room">
+            <input type="text" id="roomCode" placeholder="Enter room code">
+            <button id="createRoomBtn">Create Room</button>
+            <button id="joinRoomBtn">Join Room</button>
+        </div>
+
+        <div id="chatSection" class="hidden">
+            <div id="messages"></div>
+            <input type="text" id="messageInput" placeholder="Type your message">
+            <button id="sendMessageBtn">Send</button>
         </div>
     </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>
